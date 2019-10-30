@@ -1,0 +1,13 @@
+FROM ubuntu:latest
+MAINTAINER geonh <g2onh22@gmail.com>
+
+RUN apt-get update
+RUN apt-get install nano
+RUN apt-get install -y openjdk-8-jdk
+RUN apt-get clean
+
+ENV TERM=xterm
+
+ENV JAVA_HOME=/usr/lib/jvm/java-8-open-openjdk-amd64
+ENV CLASSPATH=$JAVA_HOME/lib/*:.
+ENV PATH=$PATH:$JAVA_HOME/bin
